@@ -1,0 +1,26 @@
+development:
+  adapter: postgresql
+  host: localhost
+  encoding: utf8
+  database: project_development
+  pool: 5
+  username: toptierlabs
+  password:
+
+test: &TEST
+  adapter: postgresql
+  host: localhost
+  encoding: utf8
+  database: project_test
+  pool: 5
+  username: toptierlabs
+  password:
+
+production:
+  adapter: postgresql
+  host: localhost
+  encoding: utf8
+  database: project_production
+  pool: 5
+  username: toptierlabs
+  password:
