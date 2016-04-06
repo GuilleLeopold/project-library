@@ -1,17 +1,13 @@
-<h1>Listing books </h1>
+<h2>Listing books </h2>
 <table>
 	<tr>
 		<th>Title</th>
-		<th>Year</th>
-		<th>ISBN</th>
 		<th>Author</th>
 	<tr>
 <% Book.all.each do |book| %>
 	<tr>
-		<td><%= book.title %></td>
-		<td><%= book.author.name + " " + book.author.last_name %></td>
-		<td><%= book.ISBN %></td>
-		<td><%= book.year %></td>
+		<td><%=link_to book.title, book %></td>
+		<td><%=link_to book.author.name + " " + book.author.last_name, book.author %></td>
 	</tr>
 <% end %>
 </table>
