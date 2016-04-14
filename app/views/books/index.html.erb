@@ -1,3 +1,10 @@
+
+  <%= link_to "Log in", new_session_path('user') %><br />
+
+ <%= link_to "Log out", destroy_user_session_path, method: :delete %><br />
+
+  <%= link_to "Sign up", new_registration_path('user') %><br />
+
 <h2>Listing books </h2>
 <table>
 	<tr>
@@ -7,7 +14,10 @@
 <% Book.all.each do |book| %>
 	<tr>
 		<td><%=link_to book.title, book %></td>
-		<td><%=link_to book.author.name + " " + book.author.last_name, book.author %></td>
+		<td><%=book.author.name + " " + book.author.last_name %></td>
+		<td><%=link_to Request, requests_path(book), method: :post %></td>
 	</tr>
 <% end %>
 </table>
+
+
