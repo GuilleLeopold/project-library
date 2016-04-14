@@ -2,11 +2,20 @@
 <html>
 <head>
   <title>LibraryTTGuillermo</title>
-  <h1>The Library</h1>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <h1>The Library</h1>
+  <% if current_user %>
+  <p><%=link_to current_user.email, users_path %></p>
+  <p> My books </p>
+  <% else %>
+  <p> Invitado </p>
+  <% end %>
+
+  <%= yield %>
 
 </body>
 </html>

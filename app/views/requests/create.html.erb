@@ -1,0 +1,4 @@
+<%= form_for :request, url: {action: "update", id: @request}, html: {class: "nifty_form", method: :put} do |f| %>
+	<%= f.date_select :request_date %>
+	<%= f.submit "Create" %>
+<% end %>

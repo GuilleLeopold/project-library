@@ -1,0 +1,17 @@
+<h2>Books on my shelf </h2>
+<table>
+	<tr>
+    <th>Date </th>
+		<th>Title</th>
+		<th>Author</th>
+    <th>Status</th>
+	<tr>
+<% current_user.requests.all.each do |request| %>
+	<tr>
+    <td><%=   request.request_date  %></td>
+		<td><%=link_to request.book.title, request.book %></td>
+		<td><%=link_to request.book.author.name + " " + request.book.author.last_name, request.book.author %></td>
+		<td><%=   request.status  %></td>
+	</tr>
+<% end %>
+</table>

@@ -1,7 +1,31 @@
 <h2>Book's information</h2>
 
-<p>Title: <%= @book.title %></p>
-<p>Title: <%= link_to @book.author.name + " " + @book.author.last_name, @book.author %></p>
-<p>Title: <%= @book.year %></p>
-<p>Title: <%= @book.ISBN %></p>
 
+
+<p>Title: <%= @book.title %></p>
+<p>Author: <%= link_to @book.author.name + " " + @book.author.last_name, @book.author %></p>
+<p>Description: <%= @book.description %>
+<p>Year: <%= @book.year %></p>
+<p>ISBN: <%= @book.ISBN %></p>
+
+
+<h1>Listing coments</h1>
+<table>
+	<tr>
+		<th>Comment</th>
+	</tr>
+<% @book.comments.all.each do |comment| %>
+	<tr>
+		<td><%= comment.text %></td>
+	</tr>
+<% end %>
+
+</table>
+
+	<% if user_signed_in? %>
+		<%= form_for [@book,@comment], html: {class: "nifty_form"} do |f| %>  
+		  <%= f.select  :stars, [['1 star',1],['2 stars',2],['3 stars',3],['4 stars',4],['5 stars',5]] %>
+		  <%= f.text_area :text, size: "60x12" %>
+		  <%= f.submit "Create" %>
+	<% end %>
+<% end %>

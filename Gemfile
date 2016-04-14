@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'activeadmin', '1.0.0.pre1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use sqlite3 as the database for Active Record
@@ -13,6 +13,10 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+
+gem 'devise', '3.4.1'
+
+gem 'carrierwave', '0.11.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -36,6 +40,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem "factory_girl_rails"
+  gem 'faker', '~> 1.4.3'
   gem 'rspec-rails', '~> 3.0'
   gem 'shoulda-matchers'
 end
