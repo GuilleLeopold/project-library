@@ -1,0 +1,19 @@
+.column-date {
+  font-size: 14pt;
+}
+
+.column-status {
+  text-transform: capitalize;
+}
+
+.aproved {
+  color:  #00e600;
+}
+
+.denied {
+  color: #ff1a1a;
+}
+
+.pending{
+  color : #bfbfbf;
+}

@@ -1,23 +1,14 @@
-
-  <%= link_to "Log in", new_session_path('user') %><br />
-
- <%= link_to "Log out", destroy_user_session_path, method: :delete %><br />
-
-  <%= link_to "Sign up", new_registration_path('user') %><br />
-
-<h2>Listing books </h2>
-<table>
-	<tr>
-		<th>Title</th>
-		<th>Author</th>
-	<tr>
-<% Book.all.each do |book| %>
-	<tr>
-		<td><%=link_to book.title, book %></td>
-		<td><%=book.author.name + " " + book.author.last_name %></td>
-		<td><%=link_to Request, requests_path(book), method: :post %></td>
-	</tr>
-<% end %>
-</table>
-
+<section class="books-section">
+	<h2 class="table-title">Books on the library </h2>
+	<table class="books-table">
+		<% Book.all.each do |book| %>
+		<tr>
+			<td class="book-column column-title"><%=link_to book.title, book %></td>
+			<td class="book-column column-author"><%=book.author.name + " " + book.author.last_name %></td>
+			<td class="book-column column-year"><%=book.year %></td>
+			<td class="book-column column-request"><%=link_to Request, requests_path(book), method: :post %></td>
+		</tr>
+	<% end %>
+	</table>
+</section>
 

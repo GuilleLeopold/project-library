@@ -1,0 +1,32 @@
+.books-section {
+  text-align: center;
+}
+
+.books-table {
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.table-title {
+  font-family: ButlerBold;
+  color: #000000;
+  font-size: 36pt
+}
+
+.book-column {
+  font-family: Lato;
+  font-size: 18pt;
+  padding: 10px 15px;
+  border-width: 0.5px 0;
+  border-color: #000;
+  border-style: solid;
+}
+
+.column-author, .column-year {
+  font-weight: 300;
+}
+
+.column-request {
+  font-size: 14pt;
+  text-decoration: underline;
+}

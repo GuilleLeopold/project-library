@@ -1,0 +1,51 @@
+.library-body{
+  min-width: 350px;
+}
+
+.library-header {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  padding-bottom: 20px;
+  display: block;
+  height: 70px;
+  width: 95% ;
+  margin-left: 2%;
+}
+
+.library-header .library-title {
+  font-family: Abril Fatface;
+  float:left;
+  font-size: 30pt;
+  width: auto;
+}
+
+.header-options {
+  font-family: Butler;
+  font-size: 18pt;
+  float: right;
+  width: auto;
+  margin: 0 25px 0 0;
+  line-height: 92px;
+}
+
+a {
+  color:inherit;
+  text-decoration: none;
+}
+
+@media (max-width: 540px) {
+
+  .library-header {
+    height: 40px;
+  }
+
+  .library-header .library-title {
+    font-size: 20pt;
+  }
+
+  .header-options {
+    font-size: 14pt;
+    line-height: 67px;
+  }
+
+}

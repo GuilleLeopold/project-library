@@ -1,17 +1,13 @@
-<h2>Books on my shelf </h2>
-<table>
-	<tr>
-    <th>Date </th>
-		<th>Title</th>
-		<th>Author</th>
-    <th>Status</th>
-	<tr>
-<% current_user.requests.all.each do |request| %>
-	<tr>
-    <td><%=   request.request_date  %></td>
-		<td><%=link_to request.book.title, request.book %></td>
-		<td><%=link_to request.book.author.name + " " + request.book.author.last_name, request.book.author %></td>
-		<td><%=   request.status  %></td>
-	</tr>
-<% end %>
-</table>
+<section class="books-section">
+  <h2 class="table-title">Books on my shelf </h2>
+  <table class="books-table" id="user-books">
+    <% current_user.requests.all.each do |request| %>
+    	<tr>
+        <td class="book-column column-date"><%=   request.request_date  %></td>
+    		<td class="book-column column-title"><%=link_to request.book.title, request.book %></td>
+    		<td class="book-column column-author"><%= request.book.author.name + " " + request.book.author.last_name %></td>
+    		<td class="book-column column-status" id="request-status"><%=   request.status  %></td>
+    	</tr>
+    <% end %>
+  </table>
+</section>

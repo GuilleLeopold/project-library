@@ -1,0 +1,17 @@
+@import url(https://fonts.googleapis.com/css?family=Abril+Fatface);
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+@font-face {
+  font-family: 'ButlerBold';
+  src: url('Butler_Bold.otf') format("opentype");
+}
+
+@font-face {
+  font-family: 'ButlerRegular';
+  src: url('../fonts/Butler_Regular.otf') format("opentype");
+}
+
+@font-face {
+  font-family: 'ButlerBlack';
+  src: url('assets/fonts/Butler_Black.otf') format("opentype");
+}
