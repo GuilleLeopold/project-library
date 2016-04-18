@@ -1,0 +1,61 @@
+.login-section, .signup-section {
+  text-align: center;
+}
+
+.login-title, .signup-title {
+  font-family: Abril Fatface, sans-serif;
+  color: black;
+  font-size: 40pt
+}
+
+.field .input {
+  font-size: 20pt;
+  font-weight: 300;
+  font-family: Lato, sans-serif;
+  margin-bottom: 5px;
+  outline:none;
+  border-width:0 0 1px 0;
+  border-bottom-color: black;
+  border-bottom-style: solid;
+}
+
+.login-button .button, .signup-button .button{
+  border: none;
+  border-width: 1px 0;
+  border-color: black;
+  border-style: solid;
+  color: black;
+  padding: 15px 32px;
+  background: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  font-size: 21pt;
+  font-family: Abril Fatface, sans-serif;
+  margin-top: 50px;
+}
+
+.forgot-pass{
+  font-family: Lato;
+  font-weight: 300;
+  font-size: 10pt;
+  text-align: right;
+}
+
+.fields{
+  width: auto;
+  display: inline-block;
+}
+
+.not-account, .already-account {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.extra-border {
+  margin: 2px auto;
+  border-width: 1px 0;
+  border-color: black;
+  border-style: solid;
+  width:130px;
+
+}

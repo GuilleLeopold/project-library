@@ -13,14 +13,14 @@
 }
 
 .library-header .library-title {
-  font-family: Abril Fatface;
+  font-family: Abril Fatface, sans-serif;
   float:left;
   font-size: 30pt;
   width: auto;
 }
 
 .header-options {
-  font-family: Butler;
+  font-family: Butler, sans-serif;
   font-size: 18pt;
   float: right;
   width: auto;
