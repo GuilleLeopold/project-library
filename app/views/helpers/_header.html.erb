@@ -1,0 +1,10 @@
+<header class="library-header">
+ <h1 class="library-title"><%= link_to "The Library", root_path %></h1>
+ <% if current_user %>
+    <p class="log-out header-options"><%= link_to "Log out", destroy_user_session_path, method: :delete %></p>
+    <p class="books header-options"> <%=link_to "My books" , users_path %></p>
+  <% else %>
+    <p class="log-in header-options"><%= link_to "Log in", new_session_path('user') %></p>
+    <p class="sign-up header-options"><%= link_to "Sign up", new_registration_path('user') %></p>
+  <% end %>
+</header>

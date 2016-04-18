@@ -3,19 +3,11 @@
 <head>
   <title>LibraryTTGuillermo</title>
   <%= javascript_include_tag 'application' %>
+  <%= stylesheet_link_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-  <h1>The Library</h1>
-  <% if current_user %>
-  <p><%=link_to current_user.email, users_path %></p>
-  <p> My books </p>
-  <% else %>
-  <p> Invitado </p>
-  <% end %>
-
+<body class="library-body">
+  <%= render partial: 'helpers/header' %>
   <%= yield %>
-
 </body>
 </html>

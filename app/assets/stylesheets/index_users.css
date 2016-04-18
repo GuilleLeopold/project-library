@@ -1,0 +1,7 @@
+.column-date {
+  font-size: 14pt;
+}
+
+.column-status {
+  text-transform: capitalize;
+}
