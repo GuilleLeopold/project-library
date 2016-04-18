@@ -8,17 +8,17 @@
 }
 
 .table-title {
-  font-family: ButlerBold;
-  color: #000000;
+  font-family: ButlerBold, sans-serif;
+  color: black;
   font-size: 36pt
 }
 
 .book-column {
-  font-family: Lato;
+  font-family: Lato, sans-serif;
   font-size: 18pt;
   padding: 10px 15px;
   border-width: 0.5px 0;
-  border-color: #000;
+  border-color: black;
   border-style: solid;
 }
 
