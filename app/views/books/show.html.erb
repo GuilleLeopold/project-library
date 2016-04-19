@@ -1,31 +1,42 @@
-<h2>Book's information</h2>
-
-
-
-<p>Title: <%= @book.title %></p>
-<p>Author: <%= link_to @book.author.name + " " + @book.author.last_name, @book.author %></p>
-<p>Description: <%= @book.description %>
-<p>Year: <%= @book.year %></p>
-<p>ISBN: <%= @book.ISBN %></p>
-
-
-<h1>Listing coments</h1>
-<table>
-	<tr>
-		<th>Comment</th>
-	</tr>
-<% @book.comments.all.each do |comment| %>
-	<tr>
-		<td><%= comment.text %></td>
-	</tr>
-<% end %>
-
-</table>
-
-	<% if user_signed_in? %>
-		<%= form_for [@book,@comment], html: {class: "nifty_form"} do |f| %>  
-		  <%= f.select  :stars, [['1 star',1],['2 stars',2],['3 stars',3],['4 stars',4],['5 stars',5]] %>
-		  <%= f.text_area :text, size: "60x12" %>
-		  <%= f.submit "Create" %>
-	<% end %>
-<% end %>
+<section class="showbook-section">
+ 	<div class=book-information>
+		<img class="book-image" src=<%=@book.image%>>
+		<div class=text-information>
+			<p class="book-title"><%= @book.title %></p>
+			<p class="book-author"> <%= link_to @book.author.name + " " + @book.author.last_name, @book.author %></p>
+			<p class="book-year"><%= @book.year %></p>
+			<p class="book-description"> <%= @book.description %></p>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="comments-div">
+		<div class="comments-section">
+			<h3 class="comment-title">Comments</h3>
+			<% @book.comments.all.each_with_index do |comment, index| %>
+				<div class="comment">
+						<p class="comment-user"><%= comment.user.email %> &#160 - </p>
+						<% for i in 1..comment.stars %>
+								<span class="rated-stars">★</span>
+						<% end %>
+						<p class="book-comment"><%= comment.text %></p>
+						<% if index != @book.comments.count - 1 %>
+							<div class="separator"></div>
+						<% end %>
+				</div>
+			<% end %>
+		</div>
+		<span class="comment-label">Add a comment &#160 - &#160 Rate:</span>
+		<div class="rating">
+			<span class="stars" data-rating="5">☆</span><span class="stars" data-rating="4">☆</span><span class="stars" data-rating="3">☆</span><span class="stars" data-rating="2">☆</span><span class="stars" data-rating="1">☆</span>
+		</div>
+		<div class="comment-field">
+			<% if user_signed_in? %>
+				<%= form_for [@book,@comment], html: {class: "nifty_form"} do |f| %>
+						<%= hidden_field(:comment, :stars, {value: "-1"}) %>
+					  <%= f.text_area :text, size: "60x12", class: "comment-input", placeholder: "Comment" %>
+					  <%= f.submit "Comment", class: "comment-button" %>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+</section>

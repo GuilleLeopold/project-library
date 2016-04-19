@@ -1,0 +1,160 @@
+.showbook-section {
+  padding-top: 20px;
+  border-top: 1px #bfbfbf solid;
+  margin-top: 30px;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.book-information{
+  display:block;
+  padding-bottom: 20px;
+  border-bottom: 1px #bfbfbf solid  ;
+}
+
+.text-information{
+  float:left;
+  text-align: left;
+  margin-left: 5px;
+}
+
+.book-title {
+  padding: 2px;
+  margin: 0;
+  font-size: 28pt;
+  font-family: Abril Fatface, sans-serif;
+}
+
+.book-author, .book-year {
+  font-size: 16pt;
+  padding: 2px;
+  margin: 0;
+  font-family: Lato;
+  font-weight: 300;
+}
+
+.book-year{
+  margin-top: 7px;
+}
+
+.book-description {
+  border-top: 1px #bfbfbf solid;
+  padding-top: 11px;
+  font-size: 13pt;
+  font-family: Lato;
+  font-weight: 400;
+}
+
+
+.book-image{
+  height: 300px;
+  width: 200px;
+  float: left;
+}
+
+.comments-div {
+  display: block;
+  text-align: left;
+}
+
+.comment-input {
+  width: 100%;
+}
+
+.rating > .stars:hover:before {
+   content: "\2605";
+   position: absolute;
+}
+
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  display: inline-block;
+}
+.rating > .stars {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.rating > .stars:hover:before, .rating > .stars:hover ~ .stars:before {
+  content: "\2605";
+  position: absolute;
+}
+
+.stars.selected:before, .stars.selected ~ .stars:before  {
+  content: "\2605";
+  position: absolute;
+}
+
+.comment-title {
+  font-size: 18pt;
+  font-family: Abril Fatface;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.comments-section{
+  border-bottom: 1px #bfbfbf solid;
+  margin-bottom: 9px;
+}
+
+.separator {
+  width: 56%;
+  border-bottom: 1px #bfbfbf solid;
+}
+
+.comments-div {
+  margin-bottom: 50px;
+}
+
+.comment {
+  padding-bottom: 7px;
+  margin-bottom: 5px;
+}
+
+.comment-user {
+  display: inline;
+  margin-right: 4px;
+  font-weight: 800;
+  font-size: 12pt;
+}
+
+.book-comment {
+  margin:0;
+  font-size: 10pt;
+  margin-bottom: 8px;
+  margin-top: 3.5px;
+}
+
+.comment-label {
+  font-weight: 800;
+}
+
+.comment-input {
+  padding: 0;
+  box-sizing: border-box;
+  margin-top: 9px;
+}
+
+.comment-button{
+  float: right;
+  border: 1px outset black;
+  background-color: black;
+  height:40px;
+  width:100px;
+  cursor:pointer;
+  font-size: 12pt;
+  font-family: Lato;
+  color: white;
+}
+
+
+@media (max-width: 767px) {
+
+  .showbook-section {
+    margin-left: 0;
+    width: 100%;
+  }
+
+}

@@ -1,3 +1,9 @@
+$(document).ready(function() {
+  changeColor();
+  $('.stars').click(stars);
+});
+
+/* Javascript used in user index  */
 function changeColor(){
   var statuses = $('.column-status');
   statuses.each(function(index, element) {
@@ -11,6 +17,10 @@ function changeColor(){
   });
 }
 
-$(document).ready(function() {
-  changeColor();
-});
+/* Javascript used in book show */
+var stars = function() {
+   $('.stars').removeClass('selected');
+   $(this).addClass('selected');
+   var rating = $(this).data('rating');
+   $('#comment_stars').val(rating);
+}
