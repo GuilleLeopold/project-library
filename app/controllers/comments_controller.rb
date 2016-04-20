@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!, :only => [:create]
 
   def create
-    @book.comments.create(comments_params)
+    @book.comments.create!(comments_params)
     redirect_to :back
   end
 

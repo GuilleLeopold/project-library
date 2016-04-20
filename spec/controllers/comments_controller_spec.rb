@@ -21,9 +21,9 @@ describe CommentsController do
       }.to change(@user.comments,:count).by(1)
     end
     it 'should not be able to create a comment' do
-      expect {
-        post :create, book_id: @book, user_id: @user
-      }.to raise_error  # Preguntar a Seba
+      post :create, book_id: @book, user_id: @user, comment: { not_valid: 'not_valid' }
+
+      expect(response).to have_http_status(:error)
     end
   end
 end

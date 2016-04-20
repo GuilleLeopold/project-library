@@ -4,6 +4,11 @@ class RequestsController < ApplicationController
   def create
     @request = Request.new(request_params)
     @success = @request.save
+
+    respond_to do |format|
+      format.html { @success ? (head :ok) : (head :error) }
+      format.js { render 'requests/create' }
+    end
   end
 
   def date

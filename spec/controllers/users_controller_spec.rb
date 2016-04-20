@@ -12,7 +12,7 @@ describe UsersController do
     end
     it 'should return 2 books' do
       get :index
-      assigns(current_user.books).should eq(@books)
+      assigns(:books).should eq(@books)
     end
   end
 end

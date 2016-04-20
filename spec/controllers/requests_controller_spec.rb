@@ -12,7 +12,7 @@ describe RequestsController do
     end
     it 'should return 1 request in book' do
       expect {
-        post :create, request: @request_attributes
+        post :create, id: @book, request: @request_attributes
       }.to change(@book.requests,:count).by(1)
     end
     it 'should return 1 request in book' do
