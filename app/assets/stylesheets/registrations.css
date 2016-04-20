@@ -5,7 +5,8 @@
 .login-title, .signup-title {
   font-family: Abril Fatface, sans-serif;
   color: black;
-  font-size: 40pt
+  font-size: 40pt;
+  text-align:center;
 }
 
 .field .input {

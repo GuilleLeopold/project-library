@@ -1,6 +1,8 @@
 $(document).ready(function() {
   changeColor();
   $('.stars').click(stars);
+  $('.book-column.column-request').click(getDateModal);
+  $('.book-column.column-request-notlogged').click(getAlertNotLogged);
 });
 
 /* Javascript used in user index  */
@@ -23,4 +25,21 @@ var stars = function() {
    $(this).addClass('selected');
    var rating = $(this).data('rating');
    $('#comment_stars').val(rating);
+}
+
+var getDateModal = function() {
+  $.get($(this).data('url'))
+    .done(function(response) {
+      $('.modal-body').html(response.data);
+      $( "#request_request_date" ).datetimepicker({
+        format: "DD/MM/YYYY"
+      });
+    })
+    .fail(function(response) {
+      alert('Fail.');
+    })
+}
+
+var getAlertNotLogged = function() {
+  alert("Please, sign in to be able to request a book")
 }

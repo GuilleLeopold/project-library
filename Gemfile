@@ -5,7 +5,6 @@ gem 'activeadmin', '1.0.0.pre1'
 gem 'rails', '4.2.6'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
-# Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -15,6 +14,10 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'devise', '3.4.1'
+
+
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
 
 gem 'carrierwave', '0.11.0'
 

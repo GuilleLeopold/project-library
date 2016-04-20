@@ -1,0 +1,7 @@
+if (<%= @success %>) {
+  alert('create');
+   $('#myModal').modal('hide');
+} else {
+  alert('<%= @request.errors.to_json %>');
+}
+

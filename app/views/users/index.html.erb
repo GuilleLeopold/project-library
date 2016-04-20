@@ -1,5 +1,7 @@
 <section class="books-section">
-  <h2 class="table-title">Books on my shelf </h2>
+  <header class="helper-header">
+    <h2 class="table-title">Books on my shelf </h2>
+  </header>
   <table class="books-table" id="user-books">
     <% current_user.requests.all.each do |request| %>
     	<tr>
