@@ -25,21 +25,21 @@
         </div>
       <% end %>
     </div>
-    <span class="comment-label">Add a comment &#160 - &#160 Rate:</span>
-    <div class="rating">
-      <span class="stars" data-rating="5">☆</span>
-      <span class="stars" data-rating="4">☆</span>
-      <span class="stars" data-rating="3">☆</span>
-      <span class="stars" data-rating="2">☆</span>
-      <span class="stars" data-rating="1">☆</span>
-    </div>
-    <div class="comment-field">
       <% if user_signed_in? %>
-        <%= form_for [@book,@comment], html: {class: "nifty_form"} do |f| %>
-          <%= hidden_field(:comment, :stars, {value: "-1"}) %>
-          <%= f.text_area :text, size: "60x12", class: "comment-input", placeholder: "Comment" %>
-          <%= f.submit "Comment", class: "comment-button" %>
-        <% end %>
+        <span class="comment-label">Add a comment &#160 - &#160 Rate:</span>
+        <div class="rating">
+          <span class="stars" data-rating="5">☆</span>
+          <span class="stars" data-rating="4">☆</span>
+          <span class="stars" data-rating="3">☆</span>
+          <span class="stars" data-rating="2">☆</span>
+          <span class="stars" data-rating="1">☆</span>
+        </div>
+        <div class="comment-field">
+          <%= form_for [@book,@comment], html: {class: "nifty_form"} do |f| %>
+            <%= hidden_field(:comment, :stars, {value: "-1"}) %>
+            <%= f.text_area :text, size: "60x12", class: "comment-input", placeholder: "Comment" %>
+            <%= f.submit "Comment", class: "comment-button" %>
+          <% end %>
       <% end %>
     </div>
   </div>
