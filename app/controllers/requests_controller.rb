@@ -6,7 +6,6 @@ class RequestsController < ApplicationController
     @success = @request.save
   end
 
-
   def date
     @book = Book.find(params[:id])
     @request = Request.new
