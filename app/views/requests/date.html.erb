@@ -1,0 +1,17 @@
+<%= form_for [@book, @request], url: requests_path, html: {class: "nifty_form"}, remote: true do |f| %>
+    <div class="form-group">
+      <div class='input-group date' id='datetimepicker1'>
+        <input type='text' class="form-control" name='request[request_date]' id="request_request_date" />
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default close-button" data-dismiss="modal">Close</button>
+    <%= f.submit "Create", class: "request-button" %>
+    <div class="clearfix"></div>
+  </div>
+<% end %>
+

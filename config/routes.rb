@@ -12,12 +12,15 @@ Rails.application.routes.draw do
       resources :comments, only: [:create]
 
       member do
-        resources :requests, only: [:create]
+        resources :requests, only: [:create] do
+          collection do
+            get :date
+          end
+        end
       end
     end
     resources :authors
     resources :users
-    resources :requests, only: [:update]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

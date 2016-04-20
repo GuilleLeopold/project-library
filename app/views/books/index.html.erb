@@ -1,14 +1,35 @@
 <section class="books-section">
-	<h2 class="table-title">Books on the library </h2>
-	<table class="books-table">
-		<% Book.all.each do |book| %>
-		<tr>
-			<td class="book-column column-title"><%=link_to book.title, book %></td>
-			<td class="book-column column-author"><%=book.author.name + " " + book.author.last_name %></td>
-			<td class="book-column column-year"><%=book.year %></td>
-			<td class="book-column column-request"><%=link_to Request, requests_path(book), method: :post %></td>
-		</tr>
-	<% end %>
-	</table>
+  <header class="helper-header">
+    <h2 class="table-title">Books on the library </h2>
+  </header>
+  <table class="books-table">
+    <% Book.all.each do |book| %>
+    <tr>
+      <td class="book-column column-title"><%=link_to book.title, book %></td>
+      <td class="book-column column-author"><%=book.author.name + " " + book.author.last_name %></td>
+      <td class="book-column column-year"><%=book.year %></td>
+      <% if current_user %>
+        <td class="book-column column-request" data-book-id="<%= book.id %>" data-url="<%= date_requests_path(book) %>" data-toggle="modal" data-target="#myModal">Request</td>
+      <% else %>
+        <td class="book-column column-request-notlogged">Request</td>
+      <% end %>
+    </tr>
+  <% end %>
+  </table>
 </section>
 
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Select request date</h4>
+      </div>
+      <div class="date-modal-body modal-body"></div>
+    </div>
+
+  </div>
+</div>
