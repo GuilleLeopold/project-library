@@ -2,6 +2,6 @@ class Comment < ActiveRecord::Base
   belongs_to :book
   belongs_to :user
 
-  validates :starts, presence: true
+  validates :stars, presence: true
   validates :text, presence: true
 end

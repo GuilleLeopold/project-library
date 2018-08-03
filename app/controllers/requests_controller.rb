@@ -4,8 +4,12 @@ class RequestsController < ApplicationController
   def create
     @request = Request.new(request_params)
     @success = @request.save
-  end
 
+    respond_to do |format|
+      format.html { @success ? (head :ok) : (head :error) }
+      format.js { render 'requests/create' }
+    end
+  end
 
   def date
     @book = Book.find(params[:id])
